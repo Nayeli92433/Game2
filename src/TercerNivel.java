@@ -14,7 +14,7 @@ public class TercerNivel {
         do {
             System.out.println("Adivina el numero en el que estoy pensando \n->  ");
             int eleccioJugador = scanner.nextInt();
-            int numeroAleatorio= random.nextInt(3) * 2;
+            int numeroAleatorio= generarNumero();
             System.out.println("Numero Aleatorio: " + numeroAleatorio);
             if (eleccioJugador == numeroAleatorio) {
                 System.out.println("Ganaste un punto!");
@@ -32,5 +32,8 @@ public class TercerNivel {
         }while (perdedor!=3);
         System.out.println("---------PERDISTE :c---------");
         imprimirPuntos.imprimirPuntos(ganador+30, perdedor);
+    }
+    public int generarNumero(){
+        return random.nextInt(3) * 2;
     }
 }

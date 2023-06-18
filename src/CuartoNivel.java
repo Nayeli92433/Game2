@@ -13,10 +13,7 @@ public class CuartoNivel {
         do {
             System.out.println("Adivina el numero en el que estoy pensando  \n->  ");
             int eleccioJugador = scanner.nextInt();
-            int numeroAleatorio = random.nextInt(4) + 1;
-            if (numeroAleatorio % 2 == 0) {
-                numeroAleatorio++;
-            }
+            int numeroAleatorio = generarNumero();
             System.out.println("Numero Aleatorio: " + numeroAleatorio);
             if (eleccioJugador == numeroAleatorio) {
                 System.out.println("Ganaste un punto!");
@@ -39,5 +36,11 @@ public class CuartoNivel {
         imprimirPuntos.imprimirPuntos(ganador+60, perdedor);
 
     }
-
+    private int generarNumero(){
+        int numeroAleatorio = random.nextInt(4) + 1;
+        if (numeroAleatorio % 2 == 0) {
+            numeroAleatorio++;
+        }
+        return numeroAleatorio;
+    }
 }
